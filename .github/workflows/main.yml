@@ -1,0 +1,17 @@
+# Файл main.yml
+# Имя workflow
+name: Main kittygram_final Workflow
+
+on:
+  push:
+    branches:
+      - main
+# Перечень задач
+jobs:
+  checkout-and-print-tree:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: Print project tree
+        run: tree .
