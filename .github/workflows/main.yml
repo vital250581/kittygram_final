@@ -17,7 +17,7 @@ services:
         POSTGRES_DB: django_kittygram
       ports:
         - 5432:5432
-      options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5s
+      options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
     steps:
     - name: Check out code
       uses: actions/checkout@v3
