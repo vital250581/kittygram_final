@@ -9,7 +9,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.getenv('SECRET_KEY')
 
-ALLOWED_HOSTS = ['158.160.22.56', '127.0.0.1', 'localhost', 'kittycat2025.servebeer.com']
+ALLOWED_HOSTS = [
+    '158.160.22.56',
+    '127.0.0.1',
+    'localhost',
+    'kittycat2025.servebeer.com'
+]
 
 DEBUG = True
 
@@ -75,7 +80,7 @@ DATABASES = {
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME':
-            'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+            'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',    # nopep8
     },
     {
         'NAME':
