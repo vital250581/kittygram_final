@@ -5,13 +5,18 @@ User = get_user_model()
 
 
 class Achievement(models.Model):
+    """_."""
+
     name = models.CharField(max_length=64)
 
     def __str__(self):
+        """_."""
         return self.name
 
 
 class Cat(models.Model):
+    """_."""
+
     name = models.CharField(max_length=16)
     color = models.CharField(max_length=16)
     birth_year = models.IntegerField()
@@ -28,12 +33,16 @@ class Cat(models.Model):
     )
 
     def __str__(self):
+        """_."""
         return self.name
 
 
 class AchievementCat(models.Model):
+    """_."""
+
     achievement = models.ForeignKey(Achievement, on_delete=models.CASCADE)
     cat = models.ForeignKey(Cat, on_delete=models.CASCADE)
 
     def __str__(self):
+        """_."""
         return f'{self.achievement} {self.cat}'

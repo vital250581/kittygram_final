@@ -6,7 +6,10 @@ from rest_framework.test import APIClient
 
 
 class CatsAPITestCase(TestCase):
+    """_."""
+
     def setUp(self):
+        """_."""
         User = get_user_model()
         self.user = User.objects.create_user(username='auth_user')
         self.client = APIClient()
