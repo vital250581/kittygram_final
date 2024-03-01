@@ -1,3 +1,4 @@
+"""_."""
 from http import HTTPStatus
 
 from django.contrib.auth import get_user_model
@@ -10,8 +11,8 @@ class CatsAPITestCase(TestCase):
 
     def setUp(self):
         """_."""
-        User = get_user_model()
-        self.user = User.objects.create_user(username='auth_user')
+        user = get_user_model()
+        self.user = user.objects.create_user(username='auth_user')
         self.client = APIClient()
         self.client.force_authenticate(user=self.user)
 
