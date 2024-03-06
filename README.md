@@ -1,3 +1,69 @@
+# Kittygram - социальная сеть для размещение фотографий домашних животных.
+
+## Описание проекта
+Проект, в котором пользователи могут регистрироваться, загружать фотографии котов с описанием их достижений, а также любоваться на других котов.
+
+[Kyttygram](https://kittycat2025.servebeer.com)
+
+## Технологии
+•	Python 3.9
+•	Django==3.2.16
+•	djangorestframework==3.14.0
+•	nginx
+•	gunicorn==20.1.0
+•   djoser==2.2.2
+
+## Автор
+[@vitaly-timofeev](https://github.com/vital250581)
+
+### Как запустить проект:
+
+Клонировать репозиторий и перейти в него в командной строке:
+
+```
+git clone https://github.com/vital250581/kittygram_final.git
+```
+
+Перейти в корневую директорию
+```
+cd kittygram_final
+```
+
+Создать файл .evn для хранения ключей:
+
+```
+SECRET_KEY='указать секретный ключ'
+ALLOWED_HOSTS='указать имя или IP хоста'
+POSTGRES_DB=django_kittygram
+POSTGRES_USER=django_user
+POSTGRES_PASSWORD=mysecretpassword
+DB_NAME=kittygram
+DB_HOST=db
+DB_PORT=5432
+DEBUG=True
+```
+
+Запустить docker-compose.production.yml:
+
+```
+docker compose -f docker-compose.production.yml up
+```
+
+Выполнить миграции, сбор статики:
+
+```
+docker compose -f docker-compose.production.yml exec backend python manage.py migrate
+docker compose -f docker-compose.production.yml exec backend python manage.py collectstatic
+docker compose -f docker-compose.production.yml exec backend cp -r /app/collected_static/. /static/static/
+
+```
+
+Создать суперпользователя, ввести почту, логин, пароль:
+
+```
+docker compose -f docker-compose.production.yml exec backend python manage.py createsuperuser
+```
+
 #  Как работать с репозиторием финального задания
 
 ## Что нужно сделать
